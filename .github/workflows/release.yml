@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # Define se deve fazer push: TRUE se for uma Tag, FALSE se for só um commit na main
       - name: Check if this is a Tag release
@@ -26,7 +26,7 @@ jobs:
       # Configura as tags da imagem (v1.0.0 e latest)
       - name: Extract Docker metadata
         id: meta
-        uses: docker/metadata-action@v5
+        uses: docker/metadata-action@v6
         with:
           images: dhdiegoribeiro/tfls-build-environment
           tags: |
@@ -34,19 +34,19 @@ jobs:
             type=raw,value=latest
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@v4
 
       # Só faz o login no Docker Hub se for uma publicação por Tag
       - name: Log in to Docker Hub
         if: steps.check_tag.outputs.push == 'true'
-        uses: docker/login-action@v3
+        uses: docker/login-action@v4
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       # Compila sempre, mas só envia para o Docker Hub se for Tag
       - name: Build and push Docker image
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: ./Dockerfile
