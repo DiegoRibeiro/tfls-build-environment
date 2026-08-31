@@ -1,3 +1,6 @@
+![GitHub Actions Status](https://github.com/DiegoRibeiro/tfls-build-environment/actions/workflows/docker-build.yml/badge.svg)
+![Docker Image Version](https://img.shields.io/docker/v/dhdiegoribeiro/tfls-build-environment?sort=semver&color=blue)
+![Docker Pulls](https://img.shields.io/docker/pulls/dhdiegoribeiro/tfls-build-environment)
 # Tibia Login Build Environment
 
 Imagem Docker com todo o ecossistema de compilação (toolchain C++ e dependências) pré-instalado para o **Tibia Login Server**.
