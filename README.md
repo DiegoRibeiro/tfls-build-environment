@@ -1,4 +1,4 @@
-![GitHub Actions Status](https://github.com/DiegoRibeiro/tfls-build-environment/actions/workflows/docker-build.yml/badge.svg)
+[![Docker Image Release](https://github.com/DiegoRibeiro/tfls-build-environment/actions/workflows/release.yml/badge.svg)](https://github.com/DiegoRibeiro/tfls-build-environment/actions/workflows/release.yml)
 ![Docker Image Version](https://img.shields.io/docker/v/dhdiegoribeiro/tfls-build-environment?sort=semver&color=blue)
 ![Docker Pulls](https://img.shields.io/docker/pulls/dhdiegoribeiro/tfls-build-environment)
 # Tibia Login Build Environment
